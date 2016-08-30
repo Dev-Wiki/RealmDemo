@@ -21,7 +21,9 @@ public class DemoApp extends Application {
     }
 
     private void initRealm() {
-        RealmConfiguration configuration = new RealmConfiguration.Builder(this).build();
+        RealmConfiguration configuration = new RealmConfiguration.Builder(this)
+                .deleteRealmIfMigrationNeeded()
+                .build();
         realm = Realm.getInstance(configuration);
     }
 
